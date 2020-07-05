@@ -5,22 +5,22 @@ Visual Programming Tool StateGo's NASM sample.
 
 ## Charts
 
-![](https://raw.githubusercontent.com/NNNIC/psgg-python-sample/master/wiki/sample.png)
+![](https://raw.githubusercontent.com/NNNIC/psgg-nasm-sample/master/wiki/sample.png)
 
 ## Hello World
 
-![](https://raw.githubusercontent.com/NNNIC/psgg-python-sample/master/wiki/helloworld.png)
+![](https://raw.githubusercontent.com/NNNIC/psgg-nasm-sample/master/wiki/helloworld.png)
 
 ## Branch
 
-![](https://raw.githubusercontent.com/NNNIC/psgg-python-sample/master/wiki/branch.png)
+![](https://raw.githubusercontent.com/NNNIC/psgg-nasm-sample/master/wiki/branch.png)
 
 ## Loop
 
-![](https://raw.githubusercontent.com/NNNIC/psgg-python-sample/master/wiki/loop.png)
+![](https://raw.githubusercontent.com/NNNIC/psgg-nasm-sample/master/wiki/loop.png)
 
 ## Output
 
-![](https://raw.githubusercontent.com/NNNIC/psgg-python-sample/master/wiki/sasm.png)
+![](https://raw.githubusercontent.com/NNNIC/psgg-nasm-sample/master/wiki/sasm.png)
 
 
