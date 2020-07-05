@@ -1,4 +1,4 @@
-﻿%include "io.inc"
+%include "io.inc"
 global CMAIN
 
     extern _printf
