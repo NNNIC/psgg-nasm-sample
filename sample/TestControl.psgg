@@ -54,7 +54,7 @@ s000d=S_START
 s000e=S_END
 s000f=S_PRINT_HELLOWORLD
 s0010=S_PRINT_YOURESUNSHINE
-s0012=S_0000
+s0012=S_Branches
 s0013=S_PRINT_0
 s0014=S_PRINT_1
 s0015=S_PRINT_2
@@ -63,7 +63,7 @@ s0018=S_PASS
 s0019=S_GSB000
 s001a=S_SBS000
 s001b=S_RET000
-s001c=S_0002
+s001c=S_CountDown
 s001d=S_PRINT_SUBROUTINE
 s001f=S_LOP000
 s0023=S_GSB001
@@ -82,7 +82,7 @@ n016=@@@
 The root
 @@@
 
-n017=64,16
+n017=64,84
 n018=1
 
 [s000e]
@@ -94,7 +94,7 @@ n016=@@@
 The root
 @@@
 
-n017=2343,1447
+n017=2311,484
 n018=2
 
 [s000f]
@@ -142,7 +142,7 @@ n017=484,84
 n018=4
 
 [s0012]
-n002=S_0000
+n002=S_Branches
 n003=@@@
 Get random and fillter 0x7.
 Branch by eax
@@ -297,7 +297,7 @@ n018=12
 [s0019]
 n002=S_GSB000
 n019=gosub
-n005=S_0002
+n005=S_CountDown
 n01a=S_SBS000
 n016=@@@
 /
@@ -334,7 +334,7 @@ n017=1584,184
 n018=15
 
 [s001c]
-n002=S_0002
+n002=S_CountDown
 n005=S_GSB001
 n007=@@@
 m_cnt : dd   5
@@ -450,7 +450,7 @@ n018=25
 
 [s0027]
 n002=S_PRINT_LOOPSUB1
-n005=S_0000
+n005=S_Branches
 n007=@@@
 msg_[[state]]:    db 'IN THE LOOP SUBROUTINE.', 10, 0
 @@@
@@ -477,7 +477,7 @@ n018=26
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2020/07/05 18:17:56
+; The setting was created automatically. 2020/07/05 21:36:53
 ; * pssgEditor version : 0.65.5617.0737256ae72d56e87335f7bfb8f8728597b6ec64
 psggfile=@@@
 TestControl.psgg
@@ -510,7 +510,7 @@ nodegroup_pos_list=@@@
 [{"Key":"\/","Value":{"x":100,"y":100}}]
 @@@
 fillter_state_location_list=@@@
-[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":64,"y":16}},{"Key":"S_END","Value":{"x":2343,"y":1447}},{"Key":"S_PRINT_HELLOWORLD","Value":{"x":265,"y":84}},{"Key":"S_PRINT_YOURESUNSHINE","Value":{"x":484,"y":84}},{"Key":"S_0000","Value":{"x":1342,"y":675}},{"Key":"S_PRINT_0","Value":{"x":1584,"y":676}},{"Key":"S_PRINT_1","Value":{"x":1584,"y":798}},{"Key":"S_PRINT_2","Value":{"x":1584,"y":945}},{"Key":"S_PRINT_ETC","Value":{"x":1584,"y":1100}},{"Key":"S_0001","Value":{"x":883,"y":1440}},{"Key":"S_PASS","Value":{"x":1947,"y":877}},{"Key":"S_GSB000","Value":{"x":948,"y":84}},{"Key":"S_SBS000","Value":{"x":1137,"y":184}},{"Key":"S_RET000","Value":{"x":1584,"y":184}},{"Key":"S_0002","Value":{"x":1813,"y":91}},{"Key":"S_PRINT_SUBROUTINE","Value":{"x":1285,"y":184}},{"Key":"S_LOP000","Value":{"x":702,"y":484}},{"Key":"S_SBS001","Value":{"x":1684,"y":491}},{"Key":"S_RET001","Value":{"x":2131,"y":491}},{"Key":"S_PRINT_LOOPSUB","Value":{"x":1832,"y":491}},{"Key":"S_GSB001","Value":{"x":2229,"y":299}},{"Key":"S_GSB002","Value":{"x":768,"y":346}},{"Key":"S_SBS002","Value":{"x":926,"y":675}},{"Key":"S_RET002","Value":{"x":2076,"y":877}},{"Key":"S_PRINT_LOOPSUB1","Value":{"x":1090,"y":675}}]}]
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":64,"y":84}},{"Key":"S_END","Value":{"x":2311,"y":484}},{"Key":"S_PRINT_HELLOWORLD","Value":{"x":265,"y":84}},{"Key":"S_PRINT_YOURESUNSHINE","Value":{"x":484,"y":84}},{"Key":"S_0000","Value":{"x":1342,"y":675}},{"Key":"S_PRINT_0","Value":{"x":1584,"y":676}},{"Key":"S_PRINT_1","Value":{"x":1584,"y":798}},{"Key":"S_PRINT_2","Value":{"x":1584,"y":945}},{"Key":"S_PRINT_ETC","Value":{"x":1584,"y":1100}},{"Key":"S_PASS","Value":{"x":1947,"y":877}},{"Key":"S_GSB000","Value":{"x":948,"y":84}},{"Key":"S_SBS000","Value":{"x":1137,"y":184}},{"Key":"S_RET000","Value":{"x":1584,"y":184}},{"Key":"S_0002","Value":{"x":1813,"y":91}},{"Key":"S_PRINT_SUBROUTINE","Value":{"x":1285,"y":184}},{"Key":"S_LOP000","Value":{"x":702,"y":484}},{"Key":"S_GSB001","Value":{"x":2229,"y":299}},{"Key":"S_SBS002","Value":{"x":926,"y":675}},{"Key":"S_RET002","Value":{"x":2076,"y":877}},{"Key":"S_PRINT_LOOPSUB1","Value":{"x":1090,"y":675}},{"Key":"S_CountDown","Value":{"x":1813,"y":91}},{"Key":"S_Branches","Value":{"x":1342,"y":675}}]}]
 @@@
 linecolor_data=@@@
 [{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
@@ -675,7 +675,6 @@ eof>>>
     $macro:goto([[nextstate]])$
 >>>
     jmp     loop_next
-
 ###VARIOUS-CONTENTS-END###
 
 
@@ -698,7 +697,7 @@ template_src=
 template_func=template-statefunc.txt
 
 help=help.ini
-helpweb=starterkit2\c\helpweb.html
+helpweb=starterkit2\nasm\helpweb.html
 
 macro_ini=TestControl.ini
 
@@ -738,21 +737,9 @@ code_output_end=[STATEGO OUTPUT END]
 commentline=; {%0}
 
 
-
-#static=@@@
-static void [[state]](bool bFirst);
-<<<?state-typ/^loop$/
-static void [[state]]_LoopCheckAndGosub____(bool bFirst);
-static void [[state]]_LoopCheckAndGosub____(bool bFirst);
-static void [[state]]_LoopNext____(bool bFirst);
->>>
-@@@
-
-
-
 [jpn]
 
-title=NASM スタートキット 2019/11/2
+title=NASM スタートキット 2020/7/5
 
 detail=@@@
 NASM 用のステートマシンを作成します。

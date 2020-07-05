@@ -1,4 +1,4 @@
-%include "io.inc"
+﻿%include "io.inc"
 global CMAIN
 
     extern _printf
@@ -78,55 +78,55 @@ err_end:
 ;             psggConverterLib.dll converted from psgg-file:TestControl.psgg
 
 ;
-;    S_0000
+;    S_Branches
 ;    Get random and fillter 0x7.
 ;    Branch by eax
 ;
-S_0000:
+S_Branches:
     mov     eax, [m_bFirst]
     test    eax, eax
-    jz      S_0000_init_end
+    jz      S_Branches_init_end
     ;call _GetTickCount@0
     call _rand
     and  eax, 0x7
     mov [m_num], eax
-S_0000_init_end:
+S_Branches_init_end:
     cmp   eax, 0
-    jne    S_0000_skip_0
+    jne    S_Branches_skip_0
     mov     eax, S_PRINT_0
     mov     [m_nextstate], eax
-    jmp  S_0000_branch_end
-S_0000_skip_0 :
+    jmp  S_Branches_branch_end
+S_Branches_skip_0 :
     cmp   eax, 1
-    jne    S_0000_skip_1
+    jne    S_Branches_skip_1
     mov     eax, S_PRINT_1
     mov     [m_nextstate], eax
-    jmp  S_0000_branch_end
-S_0000_skip_1 :
+    jmp  S_Branches_branch_end
+S_Branches_skip_1 :
     cmp   eax, 2
-    jne    S_0000_skip_2
+    jne    S_Branches_skip_2
     mov     eax, S_PRINT_2
     mov     [m_nextstate], eax
-    jmp  S_0000_branch_end
-S_0000_skip_2 :
+    jmp  S_Branches_branch_end
+S_Branches_skip_2 :
     mov     eax, S_PRINT_ETC
     mov     [m_nextstate], eax
-    jmp  S_0000_branch_end
-S_0000_branch_end:
+    jmp  S_Branches_branch_end
+S_Branches_branch_end:
     jmp     loop_next
 ;
-;    S_0002
+;    S_CountDown
 ;
-S_0002:
+S_CountDown:
     mov     eax, [m_bFirst]
     test    eax, eax
-    jz      S_0002_init_end
+    jz      S_CountDown_init_end
     mov dword [m_cnt], 5
-S_0002_init_end:
+S_CountDown_init_end:
     mov     al, [m_cnt]
     add     al, 48
-    mov     byte [msg_S_0002 + 11], al
-    push     msg_S_0002
+    mov     byte [msg_S_CountDown + 11], al
+    push     msg_S_CountDown
     call     _printf
     add      esp, 4
     mov ecx, [m_cnt]
@@ -135,7 +135,7 @@ S_0002_init_end:
     mov [m_cnt], ecx
     test    eax, eax
     jnz     loop_next
-S_0002_branch_end:
+S_CountDown_branch_end:
     mov     eax, [m_nextstate]
     test    eax, eax
     jnz      loop_next
@@ -159,7 +159,7 @@ S_GSB000:
         jmp err_end
     S_GSB000_gosub_less:
          mov edi, [m_callstack_level]
-         mov dword [m_callstack + edi], S_0002 ; m_callstack[m_callstack_level] = nex
+         mov dword [m_callstack + edi], S_CountDown ; m_callstack[m_callstack_level] = nex
          inc edi
          mov [m_callstack_level], edi                ; m_callstack_level ++
          mov     eax, S_SBS000
@@ -342,7 +342,7 @@ S_PRINT_LOOPSUB1_branch_end:
     mov     eax, [m_nextstate]
     test    eax, eax
     jnz      loop_next
-    mov     eax, S_0000
+    mov     eax, S_Branches
     mov     [m_nextstate], eax
     jmp     loop_next
 ;
@@ -478,7 +478,7 @@ msg_stackunderflow:    db 'STACK UNDER FLOW', 10, 0
 m_num: dd 0
 m_cnt : dd   5
 ;                     0123456789012
-msg_S_0002:    db 'Count down  .', 10, 0
+msg_S_CountDown:    db 'Count down  .', 10, 0
 m_loop: dd 0
 msg_S_PRINT_0:    db 'It is Zero!', 10, 0
 msg_S_PRINT_1:    db 'It is First!', 10, 0
