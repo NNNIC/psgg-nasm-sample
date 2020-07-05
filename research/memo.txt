@@ -1,0 +1,17 @@
+extern 関数@数字  数字は、スタックするバイト数
+
+参照: http://uno036.starfree.jp/PRGmanual/asm5/asm7.html　　Windows with NASM
+参照：http://uno036.starfree.jp/PRGmanual/asm5/c4.html　　C言語系/呼び出し規約/x86/cdecl
+
+nasm リファレンス
+https://www.nasm.us/doc/ 
+
+qiita
+https://qiita.com/0gajun/items/e772e1223f6e596eb362
+https://qiita.com/nirasan/items/65e8107ae21fcc36d0c9
+
+SASM これ便利　https://dman95.github.io/SASM/english.html
+
+nasm サンプル　
+https://web.archive.org/web/20120414223112/http://www.cs.lmu.edu/~ray/notes/nasmexamples/
+
